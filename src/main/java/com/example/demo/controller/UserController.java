@@ -8,6 +8,6 @@ public class UserController {
 	
 	@GetMapping("/user")
 	 public String UserData() {
-		return "Hello World"; 
+		return "Welcome to The World"; 
 	 }
 }
