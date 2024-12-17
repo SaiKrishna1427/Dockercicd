@@ -57,9 +57,7 @@ jobs:
       - name: Load and run Docker container on EC2
         run: |
           ssh -o StrictHostKeyChecking=no -i ec2_key.pem $EC2_USER@$EC2_HOST << 'EOF'
-          sudo docker load -i /tmp/demo-app.tar
-          sudo docker stop demo-container || true
-          sudo docker rm demo-container || true
+          sudo docker load -i /home/ec2-user/tmp/demo-app.tar
           sudo docker run -d -p 8080:8080 --name demo-container demo-app:latest
           EOF
 
